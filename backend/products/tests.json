@@ -1,0 +1,32 @@
+{
+  "tests": [
+    {
+      "name": "Get products list",
+      "method": "GET",
+      "path": "/",
+      "expectedStatus": 200,
+      "expectedBody": {
+        "products": []
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Create product without images",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "seller_name": "Test Seller",
+        "title": "Test Product",
+        "description": "Test description",
+        "price": 1000,
+        "card_number": "1234567890123456"
+      },
+      "expectedStatus": 201,
+      "expectedBody": {
+        "id": 1,
+        "message": "Товар добавлен"
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}
